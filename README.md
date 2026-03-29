@@ -1,7 +1,7 @@
-🚀 IPTV PRO - Ultimate Streaming Experience
+# 🚀 IPTV PRO - Ultimate Streaming Experience
 IPTV PRO is a custom-built, high-performance streaming application designed for a premium, cinema-like experience. Inspired by the sleek aesthetics of Apple TV, it offers a dark, neon-blue interface that makes browsing your favorite content effortless and stylish.
 
-✨ Key Features:
+# ✨ Key Features:
 Modern UI: A futuristic "Glassmorphism" design with smooth animations and high-quality posters.
 
 Dual-Platform: Available as a dedicated Windows (.exe) desktop app and a Mobile-ready Web version.
@@ -21,7 +21,7 @@ Desktop Core: Electron Framework
 
 Mobile/Web: Capacitor-ready for Android/iOS deployment
 
-💡 How to use:
+# 💡 How to use:
 Launch the app (or open the web link).
 
 Browse the "Family", "Action", or "Lego" categories.
