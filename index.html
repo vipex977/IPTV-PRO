@@ -2,55 +2,75 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>IPTV PRO WEB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <title>IPTV PRO | Mobile & Desktop</title>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div id="intro-loader">
-        <h1 class="word1">IPTV<span class="word2">PRO</span></h1>
-        <div class="glow-bar"></div>
-        <audio id="intro-sound" src="intro.mp3"></audio>
+        <div class="intro-content">
+            <h1 class="logo">IPTV<span>PRO</span></h1>
+            <div class="loader-line"></div>
+        </div>
     </div>
 
     <nav class="sticky-nav">
         <div class="logo">IPTV<span>PRO</span></div>
-        <div class="nav-main">
-            <button id="type-movie" class="active" onclick="switchType('movie')">Filme</button>
-            <button id="type-series" onclick="switchType('series')">Serien</button>
-        </div>
-        <div class="nav-right">
+        
+        <div class="nav-controls">
+            <div class="nav-main">
+                <button id="type-movie" class="active" onclick="switchType('movie')">Filme</button>
+                <button id="type-series" onclick="switchType('series')">Serien</button>
+            </div>
+            
             <input type="text" id="search" placeholder="Suchen..." oninput="searchItems(this.value)">
-            <button class="settings-trigger" onclick="openSettings()">⚙</button>
+            
+            <button class="settings-btn" onclick="openSettings()">⚙</button>
         </div>
     </nav>
 
-    <div id="category-bar" class="nav-sub"></div>
-    <main id="item-grid" class="grid"></main>
+    <main id="item-grid" class="grid">
+        </main>
 
     <div id="player-layer">
         <div class="player-nav">
             <button class="back-btn" onclick="closePlayer()">← ZURÜCK</button>
-            <h2 id="player-title">Stream</h2>
+            <h2 id="player-title">Stream wird geladen...</h2>
         </div>
-        <iframe id="video-frame" src="about:blank" allowfullscreen></iframe>
+        <iframe id="video-frame" src="about:blank" allowfullscreen allow="autoplay; encrypted-media"></iframe>
     </div>
 
     <div id="settings-modal" class="modal">
         <div class="modal-content">
-            <h2>Hinzufügen</h2>
-            <input type="text" id="add-title" placeholder="Titel">
-            <input type="text" id="add-category" placeholder="Kategorie">
-            <input type="text" id="id-image" placeholder="Bild-URL">
-            <input type="text" id="id-url" placeholder="Stream-URL">
-            <select id="add-type-select">
-                <option value="movie">FILM</option>
-                <option value="series">SERIE</option>
-            </select>
-            <button class="save-btn" onclick="saveEntry()">SPEICHERN</button>
-            <button onclick="closeModal()" style="background:none; border:none; color:#555; margin-top:10px; cursor:pointer;">Schließen</button>
+            <h2>Inhalt hinzufügen</h2>
+            <div class="input-group">
+                <input type="text" id="add-title" placeholder="Titel (z.B. Batman)">
+                <input type="text" id="add-category" placeholder="Kategorie (z.B. Action)">
+                <input type="text" id="id-image" placeholder="Bild-URL (Poster)">
+                <input type="text" id="id-url" placeholder="Stream-URL (Embed Link)">
+                
+                <label for="add-type-select">Typ auswählen:</label>
+                <select id="add-type-select">
+                    <option value="movie">Film</option>
+                    <option value="series">Serie</option>
+                </select>
+            </div>
+            
+            <div class="modal-btns">
+                <button class="save-btn" onclick="saveEntry()">SPEICHERN</button>
+                <button class="cancel-btn" onclick="closeModal()">ABBRECHEN</button>
+            </div>
         </div>
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
